@@ -33,12 +33,10 @@ void setup() {
 
   //need to change depending on whether correct or not
   pinMode(6,OUTPUT);
-  digitalWrite(6,HIGH);
+  digitalWrite(6,LOW);
 
 
-  
-  
-  //sfds
+ 
   
   msg.ext = 0;
   msg.id = 0x100;
@@ -51,8 +49,8 @@ void setup() {
   msg.buf[5] = 64;
   msg.buf[6] = 32;
   msg.buf[7] = 16;
-
-  //
+  
+  
 
 
 
@@ -60,25 +58,27 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  /*
   CAN_message_t inMsg;
   while (Can0.available()) 
   {
     Can0.read(inMsg);
     Serial.print("CAN bus 0: "); hexDump(8, inMsg.buf);
   }
-  
-  /*
-  msg.buf[0]++;
-  Can1.write(msg);
-  msg.buf[0]++;
-  Can1.write(msg);
-  msg.buf[0]++;
-  Can1.write(msg);
-  msg.buf[0]++;
-  Can1.write(msg);
-  msg.buf[0]++;
-  Can1.write(msg);  
-  delay(20); 
   */
+
+  
+  msg.buf[0]++;
+  Can0.write(msg);
+  msg.buf[0]++;
+  Can0.write(msg);
+  msg.buf[0]++;
+  Can0.write(msg);
+  msg.buf[0]++;
+  Can0.write(msg);
+  msg.buf[0]++;
+  Can0.write(msg);  
+  delay(20); 
+  
 
 }
