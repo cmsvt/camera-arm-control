@@ -29,12 +29,17 @@ void setup() {
 
   //Can0 is already created and corresponds to the right pin on Teensy 3.1/2/etc
   //can find documentation on defaults and their corresponding on pawlesky
-  Can0.begin();
+  Can0.begin(); 
 
   //need to change depending on whether correct or not
-  pinMode(6,OUTPUT);
-  digitalWrite(6,LOW);
-
+  //high corresponds to standby mode
+  
+  //pinMode(6,OUTPUT);
+  //digitalWrite(6,HIGH);
+  
+  //pinMode(7,OUTPUT);
+  //digitalWrite(7,LOW);
+  
 
  
   
@@ -68,15 +73,15 @@ void loop() {
   */
 
   
-  msg.buf[0]++;
-  Can0.write(msg);
-  msg.buf[0]++;
-  Can0.write(msg);
-  msg.buf[0]++;
-  Can0.write(msg);
-  msg.buf[0]++;
-  Can0.write(msg);
-  msg.buf[0]++;
+//  msg.buf[0]++;
+//  Can0.write(msg);
+//  msg.buf[0]++;
+//  Can0.write(msg);
+//  msg.buf[0]++;
+//  Can0.write(msg);
+//  msg.buf[0]++;
+//  Can0.write(msg);
+//  msg.buf[0]++;
   Can0.write(msg);  
   delay(20); 
   
